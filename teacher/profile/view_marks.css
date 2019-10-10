@@ -1,0 +1,21 @@
+.col {
+	height: 100%;
+}
+
+body,
+html {
+	height: 100%;
+	font-family: "Roboto";
+	background-image: url(./img/white-marble-stone-background-texture-pattern_free_stock_photos_picjumbo_marble_free_stock_photos_picjumbo_com-2210x1473.jpg);
+}
+
+.img-car {
+	height: 80%;
+	width: 90%;
+	align-content: center;
+}
+
+.navbar-right {
+	padding-right: 1rem;
+	padding-left: 1rem;
+}

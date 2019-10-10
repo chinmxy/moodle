@@ -1,0 +1,11 @@
+.navbar-right {
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+body,
+html {
+	height: 100%;
+	font-family: sans-serif;
+	background-image: url(./img/white-marble-stone-background-texture-pattern_free_stock_photos_picjumbo_marble_free_stock_photos_picjumbo_com-2210x1473.jpg);
+}
