@@ -64,9 +64,9 @@ $_SESSION['current_sub'] = $subject;
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="view_profile.php">View profile</a>
-              <a class="dropdown-item" href="view_marks.php">View marks</a>
-              <a class="dropdown-item" href="change_pass.php">Change password</a>
+              <a class="dropdown-item" href="../profile/view_profile.php">View profile</a>
+              <a class="dropdown-item" href="../profile/view_marks.php">View marks</a>
+              <a class="dropdown-item" href="../profile/change_pass.php">Change password</a>
 
               <!--<div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -82,6 +82,7 @@ $_SESSION['current_sub'] = $subject;
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../courses/teacher.php">My courses</a>
+              <a class="dropdown-item" href="../accept_reject/accept.php">Accept/Reject students</a>
               <a class="dropdown-item" href="../courses/optcourses.php">Opt for courses</a>
               <a class="dropdown-item" href="../courses/status.php">Check status</a>
               <!--<div class="dropdown-divider"></div>
@@ -90,7 +91,7 @@ $_SESSION['current_sub'] = $subject;
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -118,7 +119,7 @@ $_SESSION['current_sub'] = $subject;
 
       <?php
       if ($subject == 'adsa' || $subject == 'cgvr') {
-        $sql = "select rollno,elective from marks";
+        $sql = "select marks.rollno,marks.elective from marks inner join student on marks.rollno = student.rollno and student.elective_name = '$subject'";
         $result = mysqli_query($conn, $sql);
         if (mysqli_num_rows($result) > 0) {
           echo '<form method="POST">';
@@ -128,9 +129,9 @@ $_SESSION['current_sub'] = $subject;
           $dict = array();
           while ($row = mysqli_fetch_assoc($result)) {
             $r = $row['rollno'];
-            $s = $row[$subject];
+            $s = $row['elective'];
             $dict[$i] = $r;
-            echo "<tr><td>$r</td><td>$s</td><td><button type='button' onclick='newFunction($i)' class='btn btn-primary'>Change</button></td></tr>";
+            echo "<tr><td>$r</td><td>$s</td><td><button type='button' onclick='elecFunction($i)' class='btn btn-primary'>Change</button></td></tr>";
             $i = $i + 1;
           }
           echo "</table>";
@@ -196,6 +197,34 @@ $_SESSION['current_sub'] = $subject;
       };
 
       xhttp.open("GET", "chng_marks.php?student_id=" + x + "&nmarks=" + nmarks, true);
+      xhttp.send(null);
+
+    }
+
+    function elecFunction(x) {
+      // console.log("here");
+      var nmarks = prompt("Please enter marks:", "0-80");
+      //console.log(person);
+      var xhttp;
+
+      if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+      } else {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+
+
+
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("requests").innerHTML = this.responseText;
+
+          alert("Marks changed successfully!");
+          window.location.reload();
+        }
+      };
+
+      xhttp.open("GET", "chng_marks_elec.php?student_id=" + x + "&nmarks=" + nmarks, true);
       xhttp.send(null);
 
     }

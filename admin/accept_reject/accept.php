@@ -52,7 +52,7 @@ if (isset($_POST['accept'])) {
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../profile/view_profile.php">View profile</a>
-              <a class="dropdown-item" href="../profile/view_marks.php">View marks</a>
+
               <a class="dropdown-item" href="../profile/change_pass.php">Change password</a>
 
               <!--<div class="dropdown-divider"></div>
@@ -68,17 +68,15 @@ if (isset($_POST['accept'])) {
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../courses/teacher.php">My courses</a>
-              <a class="dropdown-item" href="../courses/optcourses.php">Opt for courses</a>
-              <a class="dropdown-item" href="../courses/status.php">Check status</a>
               <a class="dropdown-item" href="accept.php">Accept/Reject students</a>
+              <a class="dropdown-item" href="accept_teacher.php">Accept/Reject teachers</a>
               <!--<div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>-->
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

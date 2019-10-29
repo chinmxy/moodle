@@ -47,7 +47,7 @@ mysqli_select_db($conn, 'ip');
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../profile/view_profile.php">View profile</a>
-              <a class="dropdown-item" href="../profile/view_marks.php">View marks</a>
+
               <a class="dropdown-item" href="../profile/change_pass.php">Change password</a>
 
               <!--<div class="dropdown-divider"></div>
@@ -63,9 +63,7 @@ mysqli_select_db($conn, 'ip');
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="../courses/courses.php">Courses</a>
-              <a class="dropdown-item" href="../courses/elective.php">Opt for electives</a>
-              <a class="dropdown-item" href="#">Check status</a>
+
               <a class="dropdown-item" href="../accept_reject/accept.php">Accept/Reject students</a>
               <a class="dropdown-item" href="../accept_reject/accept_teacher.php">Accept/Reject teachers</a>
               <!--<div class="dropdown-divider"></div>
@@ -75,7 +73,7 @@ mysqli_select_db($conn, 'ip');
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

@@ -65,7 +65,7 @@ mysqli_select_db($conn, 'ip');
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../courses/courses.php">Courses</a>
               <a class="dropdown-item" href="../courses/elective.php">Opt for electives</a>
-              <a class="dropdown-item" href="#">Check status</a>
+              <a class="dropdown-item" href="../courses/status.php">Check status</a>
               <!--<div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>

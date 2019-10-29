@@ -7,6 +7,9 @@ $username = $_SESSION['username'];
 $userid = $_SESSION['current_id'];
 $uname = $_SESSION['username'];
 
+
+
+
 ?>
 <html>
 
@@ -26,42 +29,19 @@ $uname = $_SESSION['username'];
     <!-- NEW NAVIGATION BAR START -->
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="../homepage/homepage.php">Moodle v2.0</a>
+            <a class="navbar-brand" href="javascript:history.back()">Moodle v2.0</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../profile/view_profile.php">View profile</a>
-                            <a class="dropdown-item" href="../profile/view_marks.php">View marks</a>
-                            <a class="dropdown-item" href="../profile/change_pass.php">Change password</a>
 
-                            <!--<div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    -->
-                    </li>
 
                     <!-- separate -->
 
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../courses/courses.php">Courses</a>
-                            <a class="dropdown-item" href="../courses/elective.php">Opt for electives</a>
-                            <a class="dropdown-item" href="#">Check status</a>
-                            <!--<div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    -->
-                    </li>
+
 
                     <li class="nav-item active">
                         <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
@@ -84,15 +64,17 @@ $uname = $_SESSION['username'];
     </div>
     <!-- NEW NAVIGATION BAR END -->
 
-    <div class="container" style="margin:7% auto;">
-        <h4>Latest Discussion</h4>
+    <div class="container p-3 mb-2 bg-white text-dark" style="margin:7% auto;">
+        <div class="p-3 mb-2 bg-dark text-white">
+            <h3><b>Current Discussions:</b></h3>
+        </div>
         <hr>
         <?php include "../functions/db.php";
 
         $sel = mysqli_query($con, "SELECT * from category");
         while ($row = mysqli_fetch_assoc($sel)) {
             extract($row);
-            echo '<div class="panel panel-success">
+            echo '<div class="panel panel-success p-3 mb-2 bg-light text-dark">
                     <div class="panel-heading">
                     <h3 class="panel-title">' . $category . '</h3>
                     </div> 
@@ -119,6 +101,14 @@ $uname = $_SESSION['username'];
                 </div>';
         }
         ?>
+        <br>
+        <hr>
+        <br>
+        <h3> Post a forum yourself! </h3>
+        <br>
+        <hr>
+        <br>
+
         <div class="my-quest" id="quest">
             <div>
                 <form method="POST" action="question-function.php">
@@ -145,8 +135,7 @@ $uname = $_SESSION['username'];
                     <input type="hidden" name="userid" value=<?php echo $userid; ?>>
                     <input type="submit" class="btn btn-success pull-right" value="Post">
                 </form><br>
-                <hr>
-                <a href="" class="pull-right">Close</a>
+
             </div>
         </div>
 

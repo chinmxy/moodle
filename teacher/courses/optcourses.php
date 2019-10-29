@@ -4,13 +4,25 @@ session_start();
 
 $uname = $_SESSION['username'];
 $pass = $_SESSION['password'];
-$currentid = $_SESSION['current_id'];
+// $currentid = $_SESSION['current_id'];
 
 $conn = mysqli_connect('localhost', 'root', '');
 mysqli_select_db($conn, 'ip');
 
+$currentid = '';
+
+$sql = "select teacher_id from teacher where username = '$uname'";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+
+  while ($row = mysqli_fetch_assoc($result)) {
+    $currentid = $row['teacher_id'];
+  }
+}
+
 $subject = '';
-$sql = "select course_name from courses where teacher_id = $current_id";
+$sql = "select course_name from courses where teacher_id = $currentid";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
@@ -21,49 +33,105 @@ if (mysqli_num_rows($result) > 0) {
 }
 $_SESSION['current_sub'] = $subject;
 
-$message = "Enrolled successfully. Please check the status after a few days. :)";
 
+
+
+$message = "Enrolled successfully. Please check the status after a few days. :)";
+$err_msg = "You have already applied for some course!";
 
 if (isset($_POST['enrollcns'])) {
-  $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 1, 'cns')";
-  $result = mysqli_query($conn, $SQL);
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  // echo $currentid;
+  $s = "select * from pr_teacher where teacher_id = $currentid";
+  $result = mysqli_query($conn, $s);
+  if (mysqli_num_rows($result)) {
+
+    echo "<script type='text/javascript'>alert('$err_msg');</script>";
+  } else {
+
+
+    $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 1, 'cns')";
+    $result = mysqli_query($conn, $SQL);
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
 }
 
 if (isset($_POST['enrollmes'])) {
-  $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 2, 'mes')";
-  $result = mysqli_query($conn, $SQL);
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  $s = "select * from pr_teacher where teacher_id = $currentid";
+  $result = mysqli_query($conn, $s);
+  if (mysqli_num_rows($result)) {
+
+    echo "<script type='text/javascript'>alert('$err_msg');</script>";
+  } else {
+
+    $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 2, 'mes')";
+    $result = mysqli_query($conn, $SQL);
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
 }
 
 if (isset($_POST['enrollip'])) {
-  $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 3, 'ip')";
-  $result = mysqli_query($conn, $SQL);
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  $s = "select * from pr_teacher where teacher_id = $currentid";
+  $result = mysqli_query($conn, $s);
+  if (mysqli_num_rows($result)) {
+
+    echo "<script type='text/javascript'>alert('$err_msg');</script>";
+  } else {
+    $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 3, 'ip')";
+    $result = mysqli_query($conn, $SQL);
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
 }
 
 if (isset($_POST['enrollbce'])) {
-  $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 4, 'bce')";
-  $result = mysqli_query($conn, $SQL);
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  $s = "select * from pr_teacher where teacher_id = $currentid";
+  $result = mysqli_query($conn, $s);
+  if (mysqli_num_rows($result)) {
+
+    echo "<script type='text/javascript'>alert('$err_msg');</script>";
+  } else {
+    $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 4, 'bce')";
+    $result = mysqli_query($conn, $SQL);
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
 }
 
 if (isset($_POST['enrolladmt'])) {
-  $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 5, 'admt')";
-  $result = mysqli_query($conn, $SQL);
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  $s = "select * from pr_teacher where teacher_id = $currentid";
+  $result = mysqli_query($conn, $s);
+  if (mysqli_num_rows($result)) {
+
+    echo "<script type='text/javascript'>alert('$err_msg');</script>";
+  } else {
+    $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 5, 'admt')";
+    $result = mysqli_query($conn, $SQL);
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
 }
 
 if (isset($_POST['enrollcgvr'])) {
-  $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 6, 'cgvr')";
-  $result = mysqli_query($conn, $SQL);
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  $s = "select * from pr_teacher where teacher_id = $currentid";
+  $result = mysqli_query($conn, $s);
+  if (mysqli_num_rows($result)) {
+
+    echo "<script type='text/javascript'>alert('$err_msg');</script>";
+  } else {
+    $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 6, 'cgvr')";
+    $result = mysqli_query($conn, $SQL);
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
 }
 
 if (isset($_POST['enrolladsa'])) {
-  $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 7, 'adsa')";
-  $result = mysqli_query($conn, $SQL);
-  echo "<script type='text/javascript'>alert('$message');</script>";
+  $s = "select * from pr_teacher where teacher_id = $currentid";
+  $result = mysqli_query($conn, $s);
+  if (mysqli_num_rows($result)) {
+
+    echo "<script type='text/javascript'>alert('$err_msg');</script>";
+  } else {
+    $SQL = "INSERT INTO pr_teacher (teacher_id, course_id, course_name) VALUES ( $currentid, 7, 'adsa')";
+    $result = mysqli_query($conn, $SQL);
+    echo "<script type='text/javascript'>alert('$message');</script>";
+  }
 }
 ?>
 
@@ -116,6 +184,7 @@ if (isset($_POST['enrolladsa'])) {
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../courses/teacher.php">My courses</a>
+              <a class="dropdown-item" href="../accept_reject/accept.php">Accept/Reject students</a>
               <a class="dropdown-item" href="../courses/optcourses.php">Opt for courses</a>
               <a class="dropdown-item" href="../courses/status.php">Check status</a>
               <!--<div class="dropdown-divider"></div>
@@ -124,7 +193,7 @@ if (isset($_POST['enrolladsa'])) {
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -274,7 +343,7 @@ if (isset($_POST['enrolladsa'])) {
           <br>
           <hr>
           <br>
-
+          <br>
 
 
 

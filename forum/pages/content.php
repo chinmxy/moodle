@@ -14,62 +14,43 @@ $uname = $_SESSION['username'];
 <head>
   <title></title>
 
-  <!--Custom CSS-->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../student\homepage\homepage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
   <link rel="stylesheet" type="text/css" href="../css/global.css">
-  <!--Bootstrap CSS-->
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-  <!--Script-->
-  <script src="../js/jquery.js"></script>
-  <script src="../js/jquery.min.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
+
 
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+  <!-- NEW NAVIGATION BAR START -->
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- <a class="navbar-brand" href="javascript:history.back()">Back</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> -->
 
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand page-scroll" href="home.php"></a>
-      </div>
-      <div class="navbar-header">
-        <a class="navbar-brand" href="home.php">Moodle v 2.0</a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse">
-
-        <ul class="nav navbar-nav navbar-left">
-          <li><a href="#quest"> Post a Question</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?php echo $username; ?></a></li>
-            <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-
-          </ul>
+      <a class="btn btn-lg btn-primary fa fa-arrow-circle-o-left" href="javascript:history.back()" role="button"> Back</a>
 
 
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-  <div class="container" style="margin:7% auto;">
-    <h4>Latest Discussion</h4>
+
+    </nav>
+  </div>
+  <!-- NEW NAVIGATION BAR END -->
+
+  <div class="container p-3 mb-2 bg-white text-dark" style="margin:7% auto;">
+    <h3><b>Current Discussion</b></h3>
     <hr>
-    <div class="panel panel-success">
+    <div class="panel panel-success p-3 mb-2 bg-light text-dark">
       <div class="panel-heading">
         <h3 class="panel-title">Programming</h3>
       </div>

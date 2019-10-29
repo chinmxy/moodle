@@ -81,7 +81,7 @@ if (mysqli_num_rows($result) > 0) {
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../courses/courses.php">Courses</a>
               <a class="dropdown-item" href="../courses/elective.php">Opt for electives</a>
-              <a class="dropdown-item" href="status.php">Check status</a>
+              <a class="dropdown-item" href="../courses/status.php">Check status</a>
               <!--<div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
@@ -89,7 +89,7 @@ if (mysqli_num_rows($result) > 0) {
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -97,7 +97,9 @@ if (mysqli_num_rows($result) > 0) {
             <?php echo "Hello, " . $uname . "!" ?>
           </div>
           <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-          <button class="btn btn-outline-danger" href="">Logout</button>
+
+
+          <a href="../../login/index.php" class="btn btn-outline-danger">Logout</a>
         </form>
       </div>
     </nav>
@@ -145,7 +147,7 @@ if (mysqli_num_rows($result) > 0) {
         </div>
       </div>
       <div class="card" style="max-width: 25rem;">
-        <img src="img/ip1.jpg" class="card-img-top" alt="..." height=350px width=750px>
+        <img src="img/ip.jpg" class="card-img-top" alt="..." height=350px width=750px>
         <div class="card-body">
           <h5 class="card-title">IP</h5>
           <p class="card-text">Some lines which explain this particular subject in brief.</p>

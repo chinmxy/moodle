@@ -42,9 +42,9 @@ $currentroll = $_SESSION['current_id'];
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Profile
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="view_profile.php">View profile</a>
-                            <a class="dropdown-item" href="view_marks.php">View marks</a>
-                            <a class="dropdown-item" href="change_pass.php">Change password</a>
+                            <a class="dropdown-item" href="../profile/view_profile.php">View profile</a>
+                            <a class="dropdown-item" href="../profile/view_marks.php">View marks</a>
+                            <a class="dropdown-item" href="../profile/change_pass.php">Change password</a>
 
                             <!--<div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -61,7 +61,7 @@ $currentroll = $_SESSION['current_id'];
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="../courses/courses.php">Courses</a>
                             <a class="dropdown-item" href="../courses/elective.php">Opt for electives</a>
-                            <a class="dropdown-item" href="#">Check status</a>
+                            <a class="dropdown-item" href="../courses/status.php">Check status</a>
                             <!--<div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
@@ -69,7 +69,7 @@ $currentroll = $_SESSION['current_id'];
                     </li>
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -77,7 +77,9 @@ $currentroll = $_SESSION['current_id'];
                         <?php echo "Hello, " . $uname . "!" ?>
                     </div>
                     <!--<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
-                    <button class="btn btn-outline-danger" href="">Logout</button>
+
+
+                    <a href="../../login/index.php" class="btn btn-outline-danger">Logout</a>
                 </form>
             </div>
         </nav>

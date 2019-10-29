@@ -87,7 +87,7 @@ if (isset($_POST['nilesh'])) {
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="../courses/courses.php">Courses</a>
               <a class="dropdown-item" href="../courses/elective.php">Opt for electives</a>
-              <a class="dropdown-item" href="#">Check status</a>
+              <a class="dropdown-item" href="../courses/status.php">Check status</a>
               <!--<div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
@@ -95,7 +95,7 @@ if (isset($_POST['nilesh'])) {
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Forums <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="../../forum/pages/home.php">Forums <span class="sr-only">(current)</span></a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
