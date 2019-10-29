@@ -125,6 +125,7 @@ iframe {
 .wrap-table100 {
 	width: 1170px;
 }
+
 td {
 	color: black;
 }
@@ -140,36 +141,45 @@ table {
 	position: relative;
 	align: center;
 }
+
 table * {
 	position: relative;
 }
+
 table td,
 table th {
 	padding-left: 8px;
 	font-size: 20px;
 }
+
 table thead tr {
 	height: 60px;
 	background: #000;
 }
+
 table tbody tr {
 	height: 50px;
 }
+
 table tbody tr:last-child {
 	border: 0;
 }
+
 table td,
 table th {
 	text-align: center;
 }
+
 table td.l,
 table th.l {
 	text-align: right;
 }
+
 table td.c,
 table th.c {
 	text-align: center;
 }
+
 table td.r,
 table th.r {
 	text-align: center;
@@ -182,6 +192,7 @@ table th.r {
 	line-height: 1.2;
 	font-weight: unset;
 }
+
 /*
 tbody tr:nth-child(even) {
 	background-color: #f5f5f5;
@@ -234,26 +245,32 @@ tbody tr:hover {
 	table {
 		display: block;
 	}
-	table > *,
+
+	table>*,
 	table tr,
 	table td,
 	table th {
 		display: block;
 	}
+
 	table thead {
 		display: none;
 	}
+
 	table tbody tr {
 		height: auto;
 		padding: 37px 0;
 	}
+
 	table tbody tr td {
 		padding-left: 40% !important;
 		margin-bottom: 24px;
 	}
+
 	table tbody tr td:last-child {
 		margin-bottom: 0;
 	}
+
 	table tbody tr td:before {
 		font-family: OpenSans-Regular;
 		font-size: 14px;
@@ -265,21 +282,27 @@ tbody tr:hover {
 		left: 30px;
 		top: 0;
 	}
+
 	table tbody tr td:nth-child(1):before {
 		content: "Date";
 	}
+
 	table tbody tr td:nth-child(2):before {
 		content: "Order ID";
 	}
+
 	table tbody tr td:nth-child(3):before {
 		content: "Name";
 	}
+
 	table tbody tr td:nth-child(4):before {
 		content: "Price";
 	}
+
 	table tbody tr td:nth-child(5):before {
 		content: "Quantity";
 	}
+
 	table tbody tr td:nth-child(6):before {
 		content: "Total";
 	}
@@ -303,10 +326,12 @@ tbody tr:hover {
 		font-size: 14px;
 	}
 }
+
 .navbar-right {
 	padding-right: 1rem;
 	padding-left: 1rem;
 }
+
 .navbar-left {
 	padding-right: 1rem;
 	padding-left: 1rem;
